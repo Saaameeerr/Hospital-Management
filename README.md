@@ -140,7 +140,7 @@ hospital-management-dashboard/
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Saaameeerr/Hospital-Management.git
    cd hospital-management-dashboard
    ```
 
