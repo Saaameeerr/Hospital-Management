@@ -104,7 +104,8 @@ hospital-management-dashboard/
 │   ├── package.json                # Frontend dependencies
 │   ├── vite.config.js             # Vite configuration
 │   ├── tailwind.config.js         # TailwindCSS configuration
-│   └── postcss.config.js          # PostCSS configuration
+│   ├── postcss.config.js          # PostCSS configuration
+│   └── .gitignore                  # Git ignore rules for client
 ├── server/                         # Node.js backend
 │   ├── models/                     # Database models
 │   │   ├── User.js                # User model
@@ -123,8 +124,8 @@ hospital-management-dashboard/
 │   │   └── errorHandler.js        # Error handling middleware
 │   ├── server.js                   # Main server file
 │   ├── package.json                # Backend dependencies
+│   ├── .gitignore                  # Git ignore rules for server
 │   └── .env                        # Environment variables
-├── package.json                    # Root package.json
 └── README.md                       # Project documentation
 ```
 
@@ -187,8 +188,6 @@ npm run dev
 
 ### Environment Variables
 
-Create a `.env` file in the `server` directory:
-
 ```env
 # Server Configuration
 PORT=5000
@@ -227,6 +226,22 @@ The system comes with pre-configured demo accounts:
 - **Receptionist**: reception@hospital.com / reception123
 
 ## 🚀 Available Scripts
+
+### Git Commands
+
+When working with this repository, ensure you don't accidentally commit sensitive files:
+
+```bash
+# Check what files would be committed
+git status
+
+# Check if any sensitive files are being tracked (should show empty)
+git ls-files | grep -E '\.env|node_modules|dist/'
+
+# If you accidentally committed sensitive files, remove them from git but keep locally
+git rm --cached server/.env
+git rm --cached client/.env
+```
 
 ### Root Level
 ```bash
