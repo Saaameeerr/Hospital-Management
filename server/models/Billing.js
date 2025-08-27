@@ -109,10 +109,10 @@ const billingSchema = new mongoose.Schema({
 });
 
 // Index for better query performance
-billingSchema.index({ patientId: 1, billDate: -1 });
-billingSchema.index({ status: 1, dueDate: 1 });
-billingSchema.index({ billNumber: 1 });
-billingSchema.index({ dueDate: 1 });
+// billingSchema.index({ patientId: 1, billDate: -1 });
+// billingSchema.index({ status: 1, dueDate: 1 });
+// billingSchema.index({ billNumber: 1 });
+// billingSchema.index({ dueDate: 1 });
 
 // Pre-save middleware to calculate totals
 billingSchema.pre('save', function(next) {

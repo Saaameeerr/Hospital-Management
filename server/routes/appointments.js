@@ -3,14 +3,14 @@ import { body, validationResult } from 'express-validator';
 import Appointment from '../models/Appointment.js';
 import Patient from '../models/Patient.js';
 import Doctor from '../models/Doctor.js';
-import { protect, requireStaff, protectPatientOrStaff } from '../middleware/auth.js';
+import { protect, requireStaff } from '../middleware/auth.js';
 
 const router = express.Router();
 
 // @route   GET /api/appointments
 // @desc    Get all appointments with pagination and filters
 // @access  Private (Staff only)
-router.get('/', protect, protectPatientOrStaff, async (req, res) => {
+router.get('/', protect, requireStaff, async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
